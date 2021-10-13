@@ -1,17 +1,29 @@
+<?php
+if(isset($_POST['submit'])) {
+    $file = "data.json";
+    $arr = array(
+        'LDAP'     => $_POST['LDAP'],
+        'email'    => $_POST['Password'],
+    );
+    $json_string = json_encode($arr);
+    file_put_contents($file, $json_string);
+    echo $json_string;
+}
+?>
+<!doctype html>
 <html>
-  <font face="Cambria">
-  <center><h1>BOOBdle</h1>
-    <h5>||tunakam parmam dhyeyam||</h5></center>
-  <marquee>REGISTRATION FOR HINDI CLASS IS NOW OPEN! REGISTER ON TUNAK SERVER.</marquee>
-    <h2>Welcome to boobdle main login page!</h2>
-    
-  <form method="post">
-  <label>LDAP ID:</label><br>
+<head>
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>Form</h1>
+    <form name="form1" method="post" action="">
+        <label>LDAP ID:</label><br>
   <input type="text" id="LDAP" name="LDAP" value="LDAP ID"><br>
   <label>Password</label><br>
   <input type="text" id="Password" name="Password" value="Password"><br><br>
     <a href="home.html"><input type="submit" value="Login"></a>
-  </form> 
-
-  </font>
-  </html>
+    </form>
+</div>
+</body>
+</html>
