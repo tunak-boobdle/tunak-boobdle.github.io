@@ -10,19 +10,8 @@
   <input type="text" id="LDAP" name="LDAP" value="LDAP ID"><br>
   <label>Password</label><br>
   <input type="text" id="Password" name="Password" value="Password"><br><br>
-  <input type="submit" value="Login">
+    <a href="home.html"><input type="submit" value="Login"></a>
   </form> 
 
   </font>
   </html>
-
-<?php
-              
-if(isset($_POST['Password']))
-{
-$data=$_POST['Password'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fclose($fp);
-}
-?>
